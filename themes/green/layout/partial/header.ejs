@@ -1,0 +1,30 @@
+<nav>
+  <a class="nav-logo" href="<%- url_for('/') %>">
+    <span class="leaf">&#127807;</span>
+    <%= config.title %>
+    <span class="sparkle">&#10022;</span>
+  </a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" />
+  <label for="nav-toggle" class="nav-toggle-label">
+    <span></span><span></span><span></span>
+  </label>
+  <ul class="nav-links">
+    <%
+      var menuItems = theme.menu || {};
+      for (var name in menuItems) {
+        var menuPath = menuItems[name];
+        var active = false;
+        if (menuPath === '/') {
+          active = is_home();
+        } else if (menuPath === '/archives') {
+          active = is_archive();
+        } else {
+          active = is_current(menuPath);
+        }
+    %>
+    <li<%- active ? ' class="active"' : '' %>>
+      <a href="<%- url_for(menuPath) %>"><%= name %></a>
+    </li>
+    <% } %>
+  </ul>
+</nav>

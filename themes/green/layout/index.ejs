@@ -1,0 +1,13 @@
+<div class="main-card">
+  <%- partial('partial/sidebar') %>
+  <main class="article-list">
+    <% if (page.posts.length) { %>
+      <% page.posts.each(function(post){ %>
+        <%- partial('partial/article-card', {post: post}) %>
+      <% }); %>
+      <%- partial('partial/pagination') %>
+    <% } else { %>
+      <div class="empty-tip">还没有文章，快去写一篇吧。</div>
+    <% } %>
+  </main>
+</div>

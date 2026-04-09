@@ -1,0 +1,26 @@
+<%
+  var content = strip_html(post.content);
+  var speed = theme.reading_speed || 400;
+  var readTime = Math.max(1, Math.ceil(content.length / speed));
+%>
+<article class="article-card" onclick="location.href='<%- url_for(post.path) %>'">
+  <div class="article-title"><%= post.title %></div>
+  <div class="article-meta">
+    <%= date(post.date, 'YYYY-MM-DD') %>
+    <% if (post.categories && post.categories.length) { %>
+      <span class="dot">·</span>
+      <% post.categories.each(function(cat){ %>
+        <span><%= cat.name %></span>
+      <% }); %>
+    <% } %>
+    <span class="dot">·</span>
+    <%= readTime %> min read
+  </div>
+  <p class="article-excerpt">
+    <% if (post.excerpt) { %>
+      <%- strip_html(post.excerpt) %>
+    <% } else { %>
+      <%- truncate(strip_html(post.content), {length: 150}) %>
+    <% } %>
+  </p>
+</article>

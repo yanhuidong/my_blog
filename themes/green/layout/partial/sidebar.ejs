@@ -1,0 +1,36 @@
+<aside class="sidebar">
+  <div class="avatar-wrap">
+    <% if (theme.avatar) { %>
+      <img src="<%- url_for(theme.avatar) %>" alt="avatar" />
+    <% } else { %>
+      <%= (theme.author || config.author || 'A').charAt(0) %>
+    <% } %>
+  </div>
+  <div class="sidebar-name"><%= theme.subtitle || config.title %></div>
+  <div class="sidebar-bio">
+    <span class="diamond">&#10022;</span>
+    <%= theme.bio || config.description || '' %>
+    <span class="diamond">&#10022;</span>
+  </div>
+  <div class="stats-row">
+    <div class="stat-item">
+      <span class="stat-num"><%= site.posts.length %></span>
+      <span class="stat-label">文章</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num"><%= site.categories.length %></span>
+      <span class="stat-label">分类</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num"><%= site.tags.length %></span>
+      <span class="stat-label">标签</span>
+    </div>
+  </div>
+  <% if (site.tags.length) { %>
+    <div class="tags-row">
+      <% site.tags.each(function(tag){ %>
+        <a href="<%- url_for(tag.path) %>" class="tag"><%= tag.name %></a>
+      <% }); %>
+    </div>
+  <% } %>
+</aside>

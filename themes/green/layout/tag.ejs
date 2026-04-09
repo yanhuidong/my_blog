@@ -1,0 +1,18 @@
+<div class="main-card archive-layout">
+  <div class="archive-wrap">
+    <h2 class="archive-title">标签: <%= page.tag %></h2>
+    <% var lastYear = ''; %>
+    <% page.posts.each(function(post){ %>
+      <% var year = date(post.date, 'YYYY'); %>
+      <% if (year !== lastYear) { %>
+        <% lastYear = year; %>
+        <h3 class="archive-year"><%= year %></h3>
+      <% } %>
+      <a class="archive-item" href="<%- url_for(post.path) %>">
+        <span class="archive-date"><%= date(post.date, 'MM-DD') %></span>
+        <span class="archive-item-title"><%= post.title %></span>
+      </a>
+    <% }); %>
+    <%- partial('partial/pagination') %>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+# Green 主题配置
+
+# 导航菜单
+menu:
+  主页 (Home): /
+  归档 (Archive): /archives
+  关于 (About): /about
+
+# 侧边栏
+author: Hajime
+subtitle: 代码与日常
+bio: "目标：游戏开发工程师"
+
+# 头像（留空则显示默认渐变圆）
+avatar:
+
+# 每篇文章预估阅读速度（字/分钟）
+reading_speed: 400

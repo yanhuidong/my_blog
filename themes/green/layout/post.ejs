@@ -1,0 +1,47 @@
+<div class="main-card post-layout">
+  <article class="post-content-wrap">
+    <header class="post-header">
+      <h1 class="post-title"><%= page.title %></h1>
+      <div class="post-meta">
+        <span><%= date(page.date, 'YYYY-MM-DD') %></span>
+        <% if (page.categories && page.categories.length) { %>
+          <span class="dot">·</span>
+          <% page.categories.each(function(cat){ %>
+            <a href="<%- url_for(cat.path) %>"><%= cat.name %></a>
+          <% }); %>
+        <% } %>
+        <%
+          var content = strip_html(page.content);
+          var speed = theme.reading_speed || 400;
+          var readTime = Math.max(1, Math.ceil(content.length / speed));
+        %>
+        <span class="dot">·</span>
+        <span><%= readTime %> min read</span>
+      </div>
+      <% if (page.tags && page.tags.length) { %>
+        <div class="post-tags">
+          <% page.tags.each(function(tag){ %>
+            <a href="<%- url_for(tag.path) %>" class="tag"><%= tag.name %></a>
+          <% }); %>
+        </div>
+      <% } %>
+    </header>
+    <div class="post-body">
+      <%- page.content %>
+    </div>
+    <nav class="post-nav">
+      <% if (page.prev) { %>
+        <a class="post-nav-item prev" href="<%- url_for(page.prev.path) %>">
+          <span class="post-nav-label">上一篇</span>
+          <span class="post-nav-title"><%= page.prev.title %></span>
+        </a>
+      <% } %>
+      <% if (page.next) { %>
+        <a class="post-nav-item next" href="<%- url_for(page.next.path) %>">
+          <span class="post-nav-label">下一篇</span>
+          <span class="post-nav-title"><%= page.next.title %></span>
+        </a>
+      <% } %>
+    </nav>
+  </article>
+</div>
