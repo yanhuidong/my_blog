@@ -1,104 +1,103 @@
-# Hexo Configuration
-## Docs: https://hexo.io/docs/configuration.html
-## Source: https://github.com/hexojs/hexo/
+# Hexo 配置文件
+## 文档：https://hexo.io/zh-cn/docs/configuration.html
+## 源码：https://github.com/hexojs/hexo/
 
-# Site
-title: Hajime の 学习手札
-subtitle: 代码与日常
-description: 记录学习心得与项目开发日志
-keywords:
-author: Hajime
-language: zh-CN
-timezone: ''
+# 站点信息
+title: 皓月画归的学习手记          # 网站标题
+subtitle: 学习与日常                # 网站副标题
+description: 记录学习心得与项目开发日志  # 网站描述（用于 SEO 等）
+keywords:                          # 网站关键词（用于 SEO）
+author: 皓月画归                    # 作者名称
+language: zh-CN                    # 网站语言（中文简体）
+timezone: ''                       # 时区（留空则使用系统时区）
 
-# URL
-## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
-permalink: :year/:month/:day/:title/
-permalink_defaults:
-pretty_urls:
-  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+# URL 设置
+## 设置网站根网址。例如，如果使用 GitHub Pages，可设为 'https://username.github.io/project'
+url: http://example.com            # 网站访问地址（必须替换为真实地址）
+permalink: :year/:month/:day/:title/  # 文章永久链接格式
+permalink_defaults:                # 永久链接默认值（一般留空）
+pretty_urls:                       # 美化 URL 设置
+  trailing_index: true             # 是否保留链接末尾的 index.html（false 则移除）
+  trailing_html: true              # 是否保留链接末尾的 .html（false 则移除）
 
-# Directory
-source_dir: source
-public_dir: public
-tag_dir: tags
-archive_dir: archives
-category_dir: categories
-code_dir: downloads/code
-i18n_dir: :lang
-skip_render:
+# 目录设置
+source_dir: source                 # 源文件目录（存放文章、页面等）
+public_dir: public                 # 生成的静态文件输出目录
+tag_dir: tags                      # 标签目录
+archive_dir: archives              # 归档目录
+category_dir: categories           # 分类目录
+code_dir: downloads/code           # 代码文件下载目录
+i18n_dir: :lang                    # 国际化（多语言）目录
+skip_render:                       # 跳过渲染的文件或目录（支持通配符）
 
-# Writing
-new_post_name: :title.md # File name of new posts
-default_layout: post
-titlecase: false # Transform title into titlecase
-external_link:
-  enable: true # Open external links in new tab
-  field: site # Apply to the whole site
-  exclude: ''
-filename_case: 0
-render_drafts: false
-post_asset_folder: false
-relative_link: false
-future: true
-syntax_highlighter: highlight.js
-highlight:
-  line_number: true
-  auto_detect: false
-  tab_replace: ''
-  wrap: true
-  hljs: false
-prismjs:
-  preprocess: true
-  line_number: true
-  tab_replace: ''
+# 文章写作设置
+new_post_name: :title.md           # 新建文章的默认文件名格式
+default_layout: post               # 默认布局（post 为文章）
+titlecase: false                   # 是否将标题转换为首字母大写
+external_link:                     # 外部链接设置
+  enable: true                     # 是否在新标签页中打开外部链接
+  field: site                      # 适用范围（site 表示整个站点）
+  exclude: ''                      # 排除不处理的外部链接（留空）
+filename_case: 0                   # 文件名大小写转换（0 不转换，1 小写，2 大写）
+render_drafts: false               # 是否渲染草稿（drafts 文件夹中的文章）
+post_asset_folder: false           # 是否为每篇文章创建资源文件夹
+relative_link: false               # 是否使用相对路径的链接
+future: true                       # 是否显示未来日期的文章
+syntax_highlighter: highlight.js   # 语法高亮器（highlight.js 或 prismjs）
+highlight:                         # highlight.js 相关配置
+  line_number: true                # 是否显示行号
+  auto_detect: false               # 是否自动检测语言
+  tab_replace: ''                  # 替换制表符为指定数量的空格
+  wrap: true                       # 是否自动换行
+  hljs: false                      # 是否使用 hljs 类名（用于兼容 highlight.js 样式）
+prismjs:                           # prismjs 相关配置
+  preprocess: true                 # 是否预处理代码块
+  line_number: true                # 是否显示行号
+  tab_replace: ''                  # 替换制表符为指定数量的空格
 
-# Home page setting
-# path: Root path for your blogs index page. (default = '')
-# per_page: Posts displayed per page. (0 = disable pagination)
-# order_by: Posts order. (Order by date descending by default)
+# 首页设置
+# path: 博客首页路径（默认为空）
+# per_page: 每页显示文章数（设为 0 禁用分页）
+# order_by: 文章排序方式（默认按日期倒序）
 index_generator:
-  path: ''
-  per_page: 10
-  order_by: -date
+  path: ''                         # 首页路径（空表示根路径）
+  per_page: 10                     # 每页显示 10 篇文章
+  order_by: -date                  # 按日期倒序排列（新文章在前）
 
-# Category & Tag
-default_category: uncategorized
-category_map:
-tag_map:
+# 分类与标签
+default_category: uncategorized    # 默认分类（未分类时使用）
+category_map:                      # 分类名映射（中文转英文等）
+tag_map:                           # 标签名映射（中文转英文等）
 
-# Metadata elements
-## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+# 元数据元素
+## 是否自动生成 meta 标签（如 generator）
 meta_generator: true
 
-# Date / Time format
-## Hexo uses Moment.js to parse and display date
-## You can customize the date format as defined in
-## http://momentjs.com/docs/#/displaying/format/
-date_format: YYYY-MM-DD
-time_format: HH:mm:ss
-## updated_option supports 'mtime', 'date', 'empty'
-updated_option: 'mtime'
+# 日期 / 时间格式
+## Hexo 使用 Moment.js 解析和显示日期
+## 可自定义日期格式，详见 http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD            # 日期格式
+time_format: HH:mm:ss              # 时间格式
+## updated_option 可选值：'mtime'（文件修改时间）、'date'（文章日期）、'empty'（不更新）
+updated_option: 'mtime'            # 文章更新时间的来源
 
-# Pagination
-## Set per_page to 0 to disable pagination
-per_page: 10
-pagination_dir: page
+# 分页设置
+## 每页显示文章数，设为 0 禁用分页
+per_page: 10                       # 每页显示 10 篇文章
+pagination_dir: page               # 分页目录名称（如 page/2）
 
-# Include / Exclude file(s)
-## include:/exclude: options only apply to the 'source/' folder
-include:
-exclude:
-ignore:
+# 包含 / 排除文件
+## include/exclude 仅适用于 'source/' 文件夹
+include:                           # 强制包含的文件或目录
+exclude:                           # 排除的文件或目录
+ignore:                            # 忽略的文件或目录
 
-# Extensions
-## Plugins: https://hexo.io/plugins/
-## Themes: https://hexo.io/themes/
-theme: green
+# 扩展设置
+## 插件：https://hexo.io/zh-cn/plugins/
+## 主题：https://hexo.io/zh-cn/themes/
+theme: green                       # 当前使用的主题名称
 
-# Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
+# 部署设置
+## 文档：https://hexo.io/zh-cn/docs/one-command-deployment
 deploy:
-  type: ''
+  type: ''                         # 部署类型（如 git、heroku 等，留空表示不部署）

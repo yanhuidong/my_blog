@@ -7,12 +7,12 @@ menu:
   关于 (About): /about
 
 # 侧边栏
-author: Hajime
-subtitle: 代码与日常
-bio: "目标：游戏开发工程师"
+author: 皓月画归
+subtitle: 学习与日常
+bio: "目标：优秀的man"
 
 # 头像（留空则显示默认渐变圆）
-avatar:
+avatar: /image/avatar.jpg
 
 # 每篇文章预估阅读速度（字/分钟）
 reading_speed: 400
