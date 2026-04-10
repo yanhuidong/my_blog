@@ -12,7 +12,7 @@ subtitle: 学习与日常
 bio: "目标：优秀的man"
 
 # 头像（留空则显示默认渐变圆）
-avatar: /image/avatar.jpg
+avatar: https://cdn.jsdmirror.com/gh/yanhuidong/my_images/img/avatar.jpg
 
 # 每篇文章预估阅读速度（字/分钟）
 reading_speed: 400
