@@ -86,6 +86,14 @@ PicGo 是最方便的桌面工具，支持 Windows / macOS / Linux。
 - 极端情况下，可配合浏览器插件或修改 hosts 文件进一步加速 GitHub 本身（但 jsDelivr 已能解决大部分图片加载问题）。
 - 图片大小建议控制在合理范围内（单张几 MB 即可），避免仓库膨胀。
 
+### 上传失败
+
+如果按照以上步骤配置但是无法正常上传图片的话，可以打开 PicGo设置，打开日志文件，把对应时间的错误信息复制给AI，如  [deepseek](https://chat.deepseek.com/) ，自然就知道哪里出问题了
+
+![](https://cdn.jsdmirror.com/gh/yanhuidong/my_images/img/2026-04-12_13-41-56.jpg)
+
+我上传图片出错是因为我在GitHub仓库中创建的 `img` 文件夹实际上只是一个文件，所以无法上传
+
 ### 注意事项
 - GitHub 仓库大小有软限制（单个仓库推荐别超过几 GB），图片过多时可新建多个仓库。
 - 重要图片建议本地也备份一份（PicGo 支持同时备份到本地）。
